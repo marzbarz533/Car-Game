@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFS Heat - Underground Racing</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="gameContainer"></div>
+    
+    <!-- Screens -->
+    <div id="titleScreen" class="screen active">
+        <div class="title-content">
+            <h1 class="game-title">HEAT</h1>
+            <p class="subtitle">Underground Racing</p>
+            <div class="menu-buttons">
+                <button id="singleplayerBtn" class="menu-btn">SINGLEPLAYER</button>
+                <button id="multiplayerBtn" class="menu-btn">MULTIPLAYER (WIP)</button>
+                <button id="leaderboardBtn" class="menu-btn">LEADERBOARDS</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="carSelectScreen" class="screen">
+        <div class="car-select-content">
+            <h2>SELECT YOUR RIDE</h2>
+            <div id="carGrid" class="car-grid"></div>
+            <button id="backFromCarsBtn" class="menu-btn">BACK</button>
+        </div>
+    </div>
+
+    <div id="shopScreen" class="screen">
+        <div class="shop-content">
+            <h2>CAR SHOP</h2>
+            <div class="shop-container">
+                <div id="shopCars" class="shop-cars"></div>
+                <div class="shop-info">
+                    <h3 id="carName"></h3>
+                    <p id="carStats"></p>
+                    <p id="carPrice"></p>
+                    <button id="buyCarBtn" class="menu-btn">BUY</button>
+                </div>
+            </div>
+            <button id="backFromShopBtn" class="menu-btn">BACK TO GAME</button>
+        </div>
+    </div>
+
+    <div id="leaderboardScreen" class="screen">
+        <div class="leaderboard-content">
+            <h2>LEADERBOARDS</h2>
+            <div id="leaderboardList" class="leaderboard-list"></div>
+            <button id="backFromLeaderboardBtn" class="menu-btn">BACK</button>
+        </div>
+    </div>
+
+    <div id="gameHUD" class="hud hidden">
+        <div class="hud-top">
+            <div class="speed-display">
+                <div class="speed-value" id="speedometer">0</div>
+                <div class="speed-label">KM/H</div>
+            </div>
+            <div class="rep-display">
+                <div class="rep-value" id="repDisplay">0</div>
+                <div class="rep-label">REP</div>
+            </div>
+            <div class="heat-display">
+                <div class="heat-bar" id="heatBar"></div>
+                <div class="heat-label">HEAT LEVEL: <span id="heatLevel">0</span></div>
+            </div>
+        </div>
+        <div class="minimap">
+            <canvas id="minimapCanvas" width="200" height="200"></canvas>
+        </div>
+        <div class="cop-warning" id="copWarning" style="display: none;">
+            <p>COPS ENGAGED!</p>
+        </div>
+        <div class="controls-help">
+            <p>W/A/S/D - Drive | SPACE - Handbrake | P - Shop | ESC - Menu</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"></script>
+    
+    <script src="js/game.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/physics.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/cop.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/leaderboard.js"></script>
+    <script src="js/input.js"></script>
+</body>
+</html>
